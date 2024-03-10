@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  # Get songs => Audios information
+  get "/songs", to: "songs#index"
 end
