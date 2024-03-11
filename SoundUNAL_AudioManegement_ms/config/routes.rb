@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :albums
   # Playlists request
   resources :playlists
+  # Tags request
+  resources :tags
 end
