@@ -1,0 +1,22 @@
+Rails.application.routes.draw do
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
+  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  get "up" => "rails/health#show", as: :rails_health_check
+
+  # Defines the root path route ("/")
+  # root "posts#index"
+
+  # Routes for html
+  # # Post a new song => Audio information
+  # post "/songs", to:"songs#create"
+  # # Get songs => Audios information
+  # get "/songs", to: "songs#index"
+  # # Get song by id => Audios information
+  # get "/songs/:id", to: "songs#show", as: :song
+
+  # API
+  # Songs request
+  resources :songs
+end
