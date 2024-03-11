@@ -3,7 +3,10 @@ class SongsController < ApplicationController
 
 	# Get all songs
 	def index
-		@songs = Song.all
+		@songs = Song.all.map do |song|
+			image_url = url_for(song.photo) if song.photo.attached?
+			song.as_json.merge(image_url: image_url)
+		end
 
 		# Devolver JSON
 		render json: @songs
@@ -13,8 +16,10 @@ class SongsController < ApplicationController
 	def show
 		@song = Song.find(params[:id])
 
+		image_url = url_for(@song.photo) if @song.photo.attached?
+
 		# Devolver JSON
-		render json: @song
+		render json: @song.as_json.merge(image_url: image_url)
 	end
 
 	# Post a new song
@@ -51,6 +56,6 @@ class SongsController < ApplicationController
 	private
 
 	def song_params
-		params.permit(:title, :publicationDate, :lyrics, :version, :userid, :audioid, :albumid)
+		params.permit(:title, :publicationDate, :lyrics, :version, :userid, :audioid, :albumid, :photo)
 	end
 end
