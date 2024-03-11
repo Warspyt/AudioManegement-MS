@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   # Routes for html
+  # # Post a new song => Audio information
+  # post "/songs", to:"songs#create"
   # # Get songs => Audios information
   # get "/songs", to: "songs#index"
   # # Get song by id => Audios information
