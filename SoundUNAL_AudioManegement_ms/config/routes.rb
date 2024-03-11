@@ -8,6 +8,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  # Get songs => Audios information
-  get "/songs", to: "songs#index"
+  # Routes for html
+  # # Get songs => Audios information
+  # get "/songs", to: "songs#index"
+  # # Get song by id => Audios information
+  # get "/songs/:id", to: "songs#show", as: :song
+
+  # API
+  # Songs request
+  resources :songs
 end
