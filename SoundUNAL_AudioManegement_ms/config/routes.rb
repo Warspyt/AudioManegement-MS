@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   # API
   # Songs request
   resources :songs
+  # Albums request
+  resources :albums
+  # Playlists request
+  resources :playlists
 end
