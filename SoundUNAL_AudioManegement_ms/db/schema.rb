@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_12_031440) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_12_081806) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -69,6 +69,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_12_031440) do
     t.integer "userid", null: false
     t.integer "audioid", null: false
     t.integer "albumid", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tag_albums", force: :cascade do |t|
+    t.integer "tagid"
+    t.integer "albumid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tag_songs", force: :cascade do |t|
+    t.integer "tagid"
+    t.integer "songid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

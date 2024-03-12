@@ -1,0 +1,2 @@
+class TagSong < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class TagAlbum < ApplicationRecord
+end
