@@ -4,7 +4,7 @@ class AlbumsController < ApplicationController
   # Get all albums
 	def index
 		@albums = Album.all.map do |album|
-			image_url = url_for(album.photo) if album.photo.attached?
+			image_url = url_for(album.image) if album.image.attached?
 			album.as_json.merge(image_url: image_url)
 		end
 
@@ -14,7 +14,7 @@ class AlbumsController < ApplicationController
 
   # Get album by id
 	def show
-		image_url = url_for(album.photo) if album.photo.attached?
+		image_url = url_for(album.image) if album.image.attached?
 
 		# Devolver JSON
 		render json:
@@ -53,7 +53,7 @@ class AlbumsController < ApplicationController
 	private
 
 	def album_params
-		params.permit(:name, :description, :userid, :photo)
+		params.permit(:name, :description, :userid, :image)
 	end
 
 	def album

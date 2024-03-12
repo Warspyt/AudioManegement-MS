@@ -1,5 +1,5 @@
 class Song < ApplicationRecord
-    has_one_attached :photo
+    has_one_attached :image
 
     validates :title, presence: true
     validates :publicationDate, presence: true
