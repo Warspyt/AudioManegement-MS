@@ -20,4 +20,13 @@ Rails.application.routes.draw do
   resources :tag_songs
   # Tags_albums request => info albums de cada genero
   resources :tag_albums
+  # Contributors request => info contribuidores de playlists
+  resources :contributors do
+    collection do
+      get 'playlists_by_user'
+    end
+    member do
+      get 'playlist_by_user'
+    end
+  end
 end
