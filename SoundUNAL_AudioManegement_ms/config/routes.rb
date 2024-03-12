@@ -8,4 +8,25 @@ Rails.application.routes.draw do
   # API
   # Songs request
   resources :songs
+  # Albums request
+  resources :albums
+  # Playlists request
+  resources :playlists
+  # Tags request
+  resources :tags
+  # Song_playlists request => info canciones de cada playlist
+  resources :song_playlists
+  # Tags_songs request => info canciones de cada genero
+  resources :tag_songs
+  # Tags_albums request => info albums de cada genero
+  resources :tag_albums
+  # Contributors request => info contribuidores de playlists
+  resources :contributors do
+    collection do
+      get 'playlists_by_user'
+    end
+    member do
+      get 'playlist_by_user'
+    end
+  end
 end
