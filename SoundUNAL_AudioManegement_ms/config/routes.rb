@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   resources :playlists
   # Tags request
   resources :tags
+  # Song_playlists request => info canciones de cada playlist
+  resources :song_playlists
 end

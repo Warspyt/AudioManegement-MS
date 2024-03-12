@@ -27,7 +27,7 @@ class TagsController < ApplicationController
 		end
 	end
 
-	# Put for an tag
+	# Put for a tag
 	def update
 		# Devolver JSON
 		if tag.update(tag_params)

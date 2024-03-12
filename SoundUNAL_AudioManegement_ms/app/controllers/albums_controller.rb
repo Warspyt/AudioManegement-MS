@@ -44,7 +44,7 @@ class AlbumsController < ApplicationController
 		end
 	end
 
-	# Delete a album
+	# Delete an album
 	def destroy
 		album.destroy
 	end

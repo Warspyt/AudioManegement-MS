@@ -27,7 +27,7 @@ class PlaylistsController < ApplicationController
 		end
 	end
 
-	# Put for an playlist
+	# Put for a playlist
 	def update
 		# Devolver JSON
 		if playlist.update(playlist_params)
