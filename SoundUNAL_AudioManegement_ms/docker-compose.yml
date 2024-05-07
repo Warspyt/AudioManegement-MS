@@ -1,0 +1,12 @@
+name : audiomanegement
+version: '3.8'
+services:
+  my_rails_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      SECRET_KEY_BASE : 74553584d88c2bb059c12542e611fb16cedd562ace0d2bd2c1dbbb1507dcc7616943fbb43b5c37c03595b50ae8b743d3af9a612aada33ac556ea21fc96bfcd6e
+      
