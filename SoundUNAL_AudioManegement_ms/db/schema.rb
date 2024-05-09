@@ -73,8 +73,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_01_005959) do
     t.datetime "publicationDate", null: false
     t.text "lyrics", null: false
     t.integer "version", null: false
-    t.integer "userid"
-    t.string "audioid"
+    t.integer "userid", null: false
+    t.string "audioid", null: false
     t.integer "albumid", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
