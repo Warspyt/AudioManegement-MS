@@ -22,6 +22,19 @@ class SongsController < ApplicationController
 		song.as_json.merge(image_url: image_url)
 	end
 
+	 # Get song by title
+  def show_by_title
+    @song = Song.find_by(title: params[:title])
+		image_url = url_for(@song.image) if @song.image.attached?
+
+    if @song
+			# Devolver JSON
+      render json: @song.as_json.merge(image_url: image_url)
+    else
+      render json: { error: "Song not found" }, status: :not_found
+    end
+  end
+
 	# Post a new song
 	def create
 		@song = Song.new(song_params)
@@ -53,10 +66,11 @@ class SongsController < ApplicationController
 	private
 
 	def song_params
-		params.permit(:title, :publicationDate, :lyrics, :version, :userid, :audioid, :albumid, :image)
+		params.permit(:id, :title, :publicationDate, :lyrics, :version, :userid, :audioid, :albumid, :image)
 	end
 
 	def song
 		@song = Song.find(params[:id])
 	end
+
 end
